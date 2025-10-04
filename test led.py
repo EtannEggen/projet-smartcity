@@ -1,0 +1,44 @@
+import machine
+import utime
+led = machine.Pin(16,machine.Pin.OUT)
+BP = machine.Pin(18,machine.Pin.IN)
+compt = 0
+
+
+#creer une interuption et github
+def  interuption_BP(Pin)  :
+    global compt
+    compt += 1
+    print(compt)
+    
+BP.irq(trigger=machine.Pin.IRQ_RISING,handler = interuption_BP)
+while True:
+    
+    
+    
+    if compt == 1:
+        led.value(1)
+        utime.sleep_ms(300)
+        led.value(0)
+        utime.sleep_ms(300)
+        
+        
+        
+    if compt ==2:
+        led.value(1)
+        utime.sleep_ms(50)
+        led.value(0)
+        utime.sleep_ms(50)
+        
+         
+    if compt ==3:
+        led.value(0)
+        
+    if compt>=4:
+        compt=1
+            
+                
+   
+    
+    
+    
