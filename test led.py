@@ -5,7 +5,7 @@ BP = machine.Pin(18,machine.Pin.IN)
 compt = 0
 
 
-#creer une interuption et github
+
 def  interuption_BP(Pin)  :
     global compt
     compt += 1
