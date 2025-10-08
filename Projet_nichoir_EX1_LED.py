@@ -13,22 +13,19 @@ def  interuption_BP(Pin)  :
     
 BP.irq(trigger=machine.Pin.IRQ_RISING,handler = interuption_BP)
 while True:
-    
-    
-    
     if compt == 1:
         led.value(1)
-        utime.sleep_ms(300)
+        utime.sleep_ms(1000)
         led.value(0)
-        utime.sleep_ms(300)
+        utime.sleep_ms(1000)
         
         
         
     if compt ==2:
         led.value(1)
-        utime.sleep_ms(50)
+        utime.sleep_ms(500)
         led.value(0)
-        utime.sleep_ms(50)
+        utime.sleep_ms(500)
         
          
     if compt ==3:
