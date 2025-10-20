@@ -25,6 +25,7 @@ def POTVAL():
 timeview = time.ticks_ms() 
 timeled = time.ticks_ms() # moment initial
 timealarme = time.ticks_ms()
+timedefil = time.ticks_ms()
 state = 0
 clignot_LED = 1000
 i = 0
@@ -52,11 +53,11 @@ while True:
             d.setCursor(0, 1); d.print ("overflow:" +str(round(max,1)))
             if time.ticks_diff(now, timealarme) >= 500:
                 #fais deffiler le mot
-                d.setCursor(i, 0); d.print("ALARME:")
-                i += 1
+                d.setCursor (i-8, 0); d.print("ALARME:")
+                i -= 1
                 timealarme = now
-                if i > 15 :
-                    i = 0
+                if i < -6 :
+                    i = 23
    
         if time.ticks_diff(now,timeled) >= 0:#clognotement de la led
             state= not state
