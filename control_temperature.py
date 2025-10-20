@@ -25,7 +25,6 @@ def POTVAL():
 timeview = time.ticks_ms() 
 timeled = time.ticks_ms() # moment initial
 timealarme = time.ticks_ms()
-timedefil = time.ticks_ms()
 state = 0
 clignot_LED = 1000
 i = 0
